@@ -31,7 +31,7 @@
   },"5": {
     "doc": "Kubernetes basics",
     "title": "Kubernetes basics",
-    "content": " ",
+    "content": "``` . ",
     "url": "http://localhost:4000/kubernetes_basic.html",
     "relUrl": "/kubernetes_basic.html"
   },"6": {
