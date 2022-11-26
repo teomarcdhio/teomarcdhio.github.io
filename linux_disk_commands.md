@@ -4,6 +4,7 @@ title: Disk Commands
 parent: Linux
 nav_order: 1
 ---
+### Disk commnads
 
 Filling the second partition on the /dev/sda disk with all zeros  
 ```dd if=/dev/zero of=/dev/sdX2 bs=1M``` replace X with the target drive letter.  

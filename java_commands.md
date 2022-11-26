@@ -4,9 +4,9 @@ title: Java Commands
 parent: Java
 nav_order: 1
 ---
-###Java
+### Java
 
-###Bazel
+### Bazel
 Build a project  
 ```bazel build```
 Clean cache  

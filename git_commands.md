@@ -4,6 +4,7 @@ title: Git Commands
 parent: Git
 nav_order: 1
 ---
+### Git commands
 
 Squash the last two commits  
 ```git rebase -i HEAD~2```

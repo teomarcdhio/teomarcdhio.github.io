@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Istio
-parent: Kubernetes
+title: Prometheus Istio addon
+parent: Istio
 nav_order: 3
 ---
-###Istio  
+### Istio Prometheus
 
 Install Istio Prometheus addon [link](https://istio.io/latest/docs/ops/integrations/prometheus/#option-1-quick-start)  
 ```kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.16/samples/addons/prometheus.yaml```  
 Validate the service is up and running   
-```kubectl -n istio-system get svc prometheus```
+```kubectl -n istio-system get svc prometheus```  
 Expose Prometheus via Istio ( replace the hostr with a valid domain resolving on the cluster )  
 ```
 apiVersion: networking.istio.io/v1alpha3
@@ -26,7 +26,7 @@ spec:
       name: http-prom
       protocol: HTTP
     hosts:
-    - "!!!yourdoamin!!!"
+    - "!!!YOURDOMAIN!!!"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -35,7 +35,7 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "!!!yourdoamin!!!"
+  - "!!!YOURDOMAIN!!!"
   gateways:
   - prometheus-gateway
   http:
