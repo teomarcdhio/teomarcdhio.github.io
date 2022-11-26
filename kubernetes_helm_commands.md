@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Kubernetes Commands
+title: Helm Commands
 parent: Kubernetes
 nav_order: 1
 ---
-###Helm
+###Helm  
 
 Produce a sample of the chart before creatign the bundle ( from within the chart folder )
 ```helm template . -f values.yaml > sample.yaml```

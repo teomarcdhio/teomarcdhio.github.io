@@ -22,3 +22,8 @@ Delete a container docker rm uniqueContainerID .
 Set the container to restart in case of crash or host reboot docker run -d --name --restart=always myWebServer nginx .
 Map ports of the container to host ports with -p docker run -d -p 3100:2368 --name myBlog ghost ; this will map the host port 3100 to hit port 2368 of the container .
 Mount volumes with -v docker run -d -p 3100:2368 --name myBlog ghost /host/directory:/container/mountpoint
+
+Save docker image to a file    
+```docker save -o <path for generated tar file> <image name>```
+Load docker image from tar file  
+```docker load -i <path to image tar file>```
