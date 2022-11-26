@@ -1,7 +1,7 @@
 {"0": {
     "doc": "About",
     "title": "About",
-    "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com . You can find the source code for Minima at GitHub: jekyll / minima . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
+    "content": "You can find the source code for JusttheDocs at GitHub: ustthedocs-source Documentation for JusttheDocs: justthedocs-docs . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
     "url": "http://localhost:4000/about/",
     "relUrl": "/about/"
   },"1": {
@@ -11,34 +11,70 @@
     "url": "http://localhost:4000/dcoker_commands.html",
     "relUrl": "/dcoker_commands.html"
   },"2": {
+    "doc": "Disk Commands",
+    "title": "Disk Commands",
+    "content": "Filling the second partition on the /dev/sda disk with all zeros dd if=/dev/zero of=/dev/sdX2 bs=1M replace X with the target drive letter. Filling the third partition with random data dd if=/dev/urandom of=/dev/sdX3 bs=1M #replace X with the target drive letter. Wipe your master boot record (MBR) dd if=/dev/zero of=/dev/hdX bs=446 count=1 #replace X with the target drive letter. Filling the disk with all zeros (This may take a while, as it is making every bit of data 0) dd if=/dev/zero of=/dev/sdX bs=1Mreplace X with the target drive letter. Filling the disk with random data rather than zeros dd if=/dev/urandom of=/dev/sdX bs=1M replace X with the target drive letter . ",
+    "url": "http://localhost:4000/disk_commands.html",
+    "relUrl": "/disk_commands.html"
+  },"3": {
     "doc": "Docker",
     "title": "Docker",
     "content": " ",
     "url": "http://localhost:4000/docker.html",
     "relUrl": "/docker.html"
-  },"3": {
+  },"4": {
     "doc": "Docker basics",
     "title": "Docker basics",
     "content": "To build your own custom container, you need the following: a directory and a Dokcerfile. The Dockerfile is where the container is defined; you would normally start from an existing base image ( like ubuntu or node like in this case ) using the FROM syntax ( in our case the first line will be FROM node:10 ). Set your working directory inside the container with WORKDIR; this is the equivalent of a CD command in linux terminal ( in our case we will work from /usr/src/app). Then you set files you want to import in the container; these files will ideally be in your directory already and all is needed is for you to specific where the file comes from and where does it go in the container. will set the destination path inside the container ( in our case, as we set our workdirectory to /usr/src/app we just need to set it as ./ ) and the files needed from our local folder ( in our case the package.json and late rthe app.js ).The COPY command will copy the file across ( COPY package*.json ./ ). At this stage to build our dependencies we use the RUN command; this command allows you to run a command inside the container. For our specific case we woudl RUN npm install . We finally copy the rest of the folder in our container with COPY . ( moving all the content of our dockerbuild folder to the /usr/src/app folder – our working folder int eh container ). Finally we expose the container port 8080 ( EXPOSE 8080 ) and we run a command with CMD passing two parameters; the command name and the file to run ( in our case node and app.js that is the application file we will run in the container - the app is a simple node webserver announcing port and host IP of the container and is avaialbel on my github account https://github.com/teomarcdhio/dockerTestApp ). The dockerfile should look like this: . FROM node:10 WORKDIR /usr/src/app COPY package*.json ./ RUN npm install COPY . EXPOSE 8080 CMD [ \"node\", \"app.js\" ] . To build the container use docker build -t yourdockerhubusername/nameof the container dockerBuildFolder/ . The above line trigger docker to buil a container based on the dockerfile inside the dockerBuildFolder and assign a tag ( -t ) with your dockerhub username followed by the name of the actual docker container. You can now see the container in the available images ( docker images ). READ NEXT . ",
     "url": "http://localhost:4000/docker_basics.html",
     "relUrl": "/docker_basics.html"
-  },"4": {
+  },"5": {
+    "doc": "Git",
+    "title": "Git",
+    "content": "Interesting article MultipleGitAccounts . ",
+    "url": "http://localhost:4000/git.html",
+    "relUrl": "/git.html"
+  },"6": {
+    "doc": "Git Commands",
+    "title": "Git Commands",
+    "content": " ",
+    "url": "http://localhost:4000/git_commands.html",
+    "relUrl": "/git_commands.html"
+  },"7": {
     "doc": "Kubernetes",
     "title": "Kubernetes",
     "content": " ",
     "url": "http://localhost:4000/kubernetes.html",
     "relUrl": "/kubernetes.html"
-  },"5": {
+  },"8": {
     "doc": "Kubernetes basics",
     "title": "Kubernetes basics",
     "content": "``` . ",
     "url": "http://localhost:4000/kubernetes_basic.html",
     "relUrl": "/kubernetes_basic.html"
-  },"6": {
+  },"9": {
     "doc": "Kubernetes Commands",
     "title": "Kubernetes Commands",
     "content": " ",
     "url": "http://localhost:4000/kubernetes_commands.html",
     "relUrl": "/kubernetes_commands.html"
+  },"10": {
+    "doc": "Linux",
+    "title": "Linux",
+    "content": " ",
+    "url": "http://localhost:4000/linux.html",
+    "relUrl": "/linux.html"
+  },"11": {
+    "doc": "Terraform",
+    "title": "Terraform",
+    "content": " ",
+    "url": "http://localhost:4000/terraform.html",
+    "relUrl": "/terraform.html"
+  },"12": {
+    "doc": "Terraform Commands",
+    "title": "Terraform Commands",
+    "content": " ",
+    "url": "http://localhost:4000/terraform_commands.html",
+    "relUrl": "/terraform_commands.html"
   }
 }
