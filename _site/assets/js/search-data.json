@@ -2,79 +2,127 @@
     "doc": "About",
     "title": "About",
     "content": "You can find the source code for JusttheDocs at GitHub: ustthedocs-source Documentation for JusttheDocs: justthedocs-docs . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
-    "url": "http://localhost:4000/about/",
+    "url": "/about/",
     "relUrl": "/about/"
   },"1": {
     "doc": "Docker Commands",
     "title": "Docker Commands",
-    "content": "docker run name-of-the-container To create a new container; if the image is not available locally, Docker will look for a match in the DockerHub registry. docker images To list local images. docker run -d nginx To create a container that runs in the background use the -d flag. To give the container a unique name use –name docker run -d –name myWebServer nginx ; this will create an Nginx container named myWebServer that runs in the background . To create a new container and interact with it via shell use docker run -it name-of-the-container bash . List running containers and details such as their network port associations and unique container ID with docker ps . Most of the following commands can be run against the name of the container or their unique ID; examples are with the unique ID. Interact with existing container via shell docker exec -it uniqueContainerID /bin/bash . See container details while running docker inspect uniqueContainerID . Stop a container docker stop uniqueContainerID . Start a container docker start uniqueContainerID . Delete a container docker rm uniqueContainerID . Set the container to restart in case of crash or host reboot docker run -d –name –restart=always myWebServer nginx . Map ports of the container to host ports with -p docker run -d -p 3100:2368 –name myBlog ghost ; this will map the host port 3100 to hit port 2368 of the container . Mount volumes with -v docker run -d -p 3100:2368 –name myBlog ghost /host/directory:/container/mountpoint . ",
-    "url": "http://localhost:4000/dcoker_commands.html",
+    "content": "docker run name-of-the-container To create a new container; if the image is not available locally, Docker will look for a match in the DockerHub registry. docker images To list local images. docker run -d nginx To create a container that runs in the background use the -d flag. To give the container a unique name use –name docker run -d –name myWebServer nginx ; this will create an Nginx container named myWebServer that runs in the background . To create a new container and interact with it via shell use docker run -it name-of-the-container bash . List running containers and details such as their network port associations and unique container ID with docker ps . Most of the following commands can be run against the name of the container or their unique ID; examples are with the unique ID. Interact with existing container via shell docker exec -it uniqueContainerID /bin/bash . See container details while running docker inspect uniqueContainerID . Stop a container docker stop uniqueContainerID . Start a container docker start uniqueContainerID . Delete a container docker rm uniqueContainerID . Set the container to restart in case of crash or host reboot docker run -d –name –restart=always myWebServer nginx . Map ports of the container to host ports with -p docker run -d -p 3100:2368 –name myBlog ghost ; this will map the host port 3100 to hit port 2368 of the container . Mount volumes with -v docker run -d -p 3100:2368 –name myBlog ghost /host/directory:/container/mountpoint . Save docker image to a file docker save -o &lt;path for generated tar file&gt; &lt;image name&gt; Load docker image from tar file docker load -i &lt;path to image tar file&gt; . ",
+    "url": "/dcoker_commands.html",
     "relUrl": "/dcoker_commands.html"
   },"2": {
-    "doc": "Disk Commands",
-    "title": "Disk Commands",
-    "content": "Filling the second partition on the /dev/sda disk with all zeros dd if=/dev/zero of=/dev/sdX2 bs=1M replace X with the target drive letter. Filling the third partition with random data dd if=/dev/urandom of=/dev/sdX3 bs=1M #replace X with the target drive letter. Wipe your master boot record (MBR) dd if=/dev/zero of=/dev/hdX bs=446 count=1 #replace X with the target drive letter. Filling the disk with all zeros (This may take a while, as it is making every bit of data 0) dd if=/dev/zero of=/dev/sdX bs=1Mreplace X with the target drive letter. Filling the disk with random data rather than zeros dd if=/dev/urandom of=/dev/sdX bs=1M replace X with the target drive letter . ",
-    "url": "http://localhost:4000/disk_commands.html",
-    "relUrl": "/disk_commands.html"
-  },"3": {
     "doc": "Docker",
     "title": "Docker",
     "content": "Docker . Links . ",
-    "url": "http://localhost:4000/docker.html",
+    "url": "/docker.html",
     "relUrl": "/docker.html"
-  },"4": {
+  },"3": {
     "doc": "Docker basics",
     "title": "Docker basics",
     "content": "To build your own custom container, you need the following: a directory and a Dokcerfile. The Dockerfile is where the container is defined; you would normally start from an existing base image ( like ubuntu or node like in this case ) using the FROM syntax ( in our case the first line will be FROM node:10 ). Set your working directory inside the container with WORKDIR; this is the equivalent of a CD command in linux terminal ( in our case we will work from /usr/src/app). Then you set files you want to import in the container; these files will ideally be in your directory already and all is needed is for you to specific where the file comes from and where does it go in the container. will set the destination path inside the container ( in our case, as we set our workdirectory to /usr/src/app we just need to set it as ./ ) and the files needed from our local folder ( in our case the package.json and late rthe app.js ).The COPY command will copy the file across ( COPY package*.json ./ ). At this stage to build our dependencies we use the RUN command; this command allows you to run a command inside the container. For our specific case we woudl RUN npm install . We finally copy the rest of the folder in our container with COPY . ( moving all the content of our dockerbuild folder to the /usr/src/app folder – our working folder int eh container ). Finally we expose the container port 8080 ( EXPOSE 8080 ) and we run a command with CMD passing two parameters; the command name and the file to run ( in our case node and app.js that is the application file we will run in the container - the app is a simple node webserver announcing port and host IP of the container and is avaialbel on my github account https://github.com/teomarcdhio/dockerTestApp ). The dockerfile should look like this: . FROM node:10 WORKDIR /usr/src/app COPY package*.json ./ RUN npm install COPY . EXPOSE 8080 CMD [ \"node\", \"app.js\" ] . To build the container use docker build -t yourdockerhubusername/nameof the container dockerBuildFolder/ . The above line trigger docker to buil a container based on the dockerfile inside the dockerBuildFolder and assign a tag ( -t ) with your dockerhub username followed by the name of the actual docker container. You can now see the container in the available images ( docker images ). READ NEXT . ",
-    "url": "http://localhost:4000/docker_basics.html",
+    "url": "/docker_basics.html",
     "relUrl": "/docker_basics.html"
-  },"5": {
+  },"4": {
     "doc": "Git",
     "title": "Git",
-    "content": "Git . Links . How to configure multiple Git accounts on the same client link Rebase your code link . ",
-    "url": "http://localhost:4000/git.html",
+    "content": "Git . Links . How to configure multiple Git accounts on the same client link Rebase your code link Gitignore templates link . ",
+    "url": "/git.html",
     "relUrl": "/git.html"
-  },"6": {
+  },"5": {
     "doc": "Git Commands",
     "title": "Git Commands",
-    "content": " ",
-    "url": "http://localhost:4000/git_commands.html",
+    "content": "Git commands . Squash the last two commits git rebase -i HEAD~2 git push -f Rebase from main git rebase main yourBranchName Delete a local branch git branch -D yourBranchName Cherry pick commit 63162ea git cherry-pick 63162ea . ",
+    "url": "/git_commands.html",
     "relUrl": "/git_commands.html"
+  },"6": {
+    "doc": "Helm",
+    "title": "Helm",
+    "content": "Helm . Links . ",
+    "url": "/helm.html",
+    "relUrl": "/helm.html"
   },"7": {
+    "doc": "Helm Commands",
+    "title": "Helm Commands",
+    "content": "Helm commands . Produce a sample of the chart before creatign the bundle ( from within the chart folder ) helm template . -f values.yaml &gt; sample.yaml . List available helm deployments inside a namesapce helm list -n namesapce . ",
+    "url": "/helm_commands.html",
+    "relUrl": "/helm_commands.html"
+  },"8": {
+    "doc": "Istio",
+    "title": "Istio",
+    "content": "Istio . Links . ",
+    "url": "/istio.html",
+    "relUrl": "/istio.html"
+  },"9": {
+    "doc": "Prometheus Istio addon",
+    "title": "Prometheus Istio addon",
+    "content": "Istio Prometheus . Install Istio Prometheus addon link kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.16/samples/addons/prometheus.yaml Validate the service is up and running kubectl -n istio-system get svc prometheus Expose Prometheus via Istio ( replace the hostr with a valid domain resolving on the cluster ) . apiVersion: networking.istio.io/v1alpha3 kind: Gateway metadata: name: prometheus-gateway namespace: istio-system spec: selector: istio: ingressgateway servers: - port: number: 80 name: http-prom protocol: HTTP hosts: - \"!!!YOURDOMAIN!!!\" --- apiVersion: networking.istio.io/v1alpha3 kind: VirtualService metadata: name: prometheus-vs namespace: istio-system spec: hosts: - \"!!!YOURDOMAIN!!!\" gateways: - prometheus-gateway http: - route: - destination: host: prometheus port: number: 9090 --- apiVersion: networking.istio.io/v1alpha3 kind: DestinationRule metadata: name: prometheus namespace: istio-system spec: host: prometheus trafficPolicy: tls: mode: DISABLE --- . ",
+    "url": "/istio_prometheus.html",
+    "relUrl": "/istio_prometheus.html"
+  },"10": {
+    "doc": "Java",
+    "title": "Java",
+    "content": "Java . Links . ",
+    "url": "/java.html",
+    "relUrl": "/java.html"
+  },"11": {
+    "doc": "Java Commands",
+    "title": "Java Commands",
+    "content": "Java . Bazel . Build a project bazel build Clean cache bazel clean --expunge . ",
+    "url": "/java_commands.html",
+    "relUrl": "/java_commands.html"
+  },"12": {
     "doc": "Kubernetes",
     "title": "Kubernetes",
     "content": "Kubernetes . Links . ",
-    "url": "http://localhost:4000/kubernetes.html",
+    "url": "/kubernetes.html",
     "relUrl": "/kubernetes.html"
-  },"8": {
+  },"13": {
     "doc": "Kubernetes basics",
     "title": "Kubernetes basics",
-    "content": "``` . ",
-    "url": "http://localhost:4000/kubernetes_basic.html",
+    "content": "Kubernetes basic . ",
+    "url": "/kubernetes_basic.html",
     "relUrl": "/kubernetes_basic.html"
-  },"9": {
+  },"14": {
     "doc": "Kubernetes Commands",
     "title": "Kubernetes Commands",
-    "content": " ",
-    "url": "http://localhost:4000/kubernetes_commands.html",
+    "content": "Kubernetes commands . Produce a sample of the chart before creatign the bundle ( from within the chart folder ) helm template . -f values.yaml &gt; sample.yaml . List available helm deployments inside a namesapce helm list -n namesapce . ",
+    "url": "/kubernetes_commands.html",
     "relUrl": "/kubernetes_commands.html"
-  },"10": {
+  },"15": {
     "doc": "Linux",
     "title": "Linux",
     "content": "Linux . Links . ",
-    "url": "http://localhost:4000/linux.html",
+    "url": "/linux.html",
     "relUrl": "/linux.html"
-  },"11": {
+  },"16": {
+    "doc": "Bash Commands",
+    "title": "Bash Commands",
+    "content": "Bash commands . Load and execute content of a file in the current shell ( example with .bashrc file ) source ~/.bashrc . ",
+    "url": "/linux_bash_commands.html",
+    "relUrl": "/linux_bash_commands.html"
+  },"17": {
+    "doc": "Disk Commands",
+    "title": "Disk Commands",
+    "content": "Disk commnads . Filling the second partition on the /dev/sda disk with all zeros dd if=/dev/zero of=/dev/sdX2 bs=1M replace X with the target drive letter. Filling the third partition with random data dd if=/dev/urandom of=/dev/sdX3 bs=1M #replace X with the target drive letter. Wipe your master boot record (MBR) dd if=/dev/zero of=/dev/hdX bs=446 count=1 #replace X with the target drive letter. Filling the disk with all zeros (This may take a while, as it is making every bit of data 0) dd if=/dev/zero of=/dev/sdX bs=1Mreplace X with the target drive letter. Filling the disk with random data rather than zeros dd if=/dev/urandom of=/dev/sdX bs=1M replace X with the target drive letter . ",
+    "url": "/linux_disk_commands.html",
+    "relUrl": "/linux_disk_commands.html"
+  },"18": {
+    "doc": "Regex Commands",
+    "title": "Regex Commands",
+    "content": "Regex links . Regex generator link Log regex generator link . Regex commnads . Apache logs parsing 127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\" using the following regex /^(?&lt;host&gt;[^ ]*) [^ ]* (?&lt;user&gt;[^ ]*) \\[(?&lt;time&gt;[^\\]]*)\\] \"(?&lt;method&gt;\\S+)(?: +(?&lt;path&gt;[^ ]*) +\\S*)?\" (?&lt;code&gt;[^ ]*) (?&lt;size&gt;[^ ]*)(?: \"(?&lt;referer&gt;[^\\\"]*)\" \"(?&lt;agent&gt;.*)\")?$/ The output looks like . { \"parsed\": { \"host\": \"127.0.0.1\", \"user\": \"frank\", \"method\": \"GET\", \"path\": \"/apache_pb.gif\", \"code\": \"200\", \"size\": \"2326\", \"referer\": \"http://www.example.com/start.html\", \"agent\": \"Mozilla/4.08 [en] (Win98; I ;Nav)\" } } . ",
+    "url": "/linux_regex_commands.html",
+    "relUrl": "/linux_regex_commands.html"
+  },"19": {
     "doc": "Terraform",
     "title": "Terraform",
     "content": "Terraform . Links . ",
-    "url": "http://localhost:4000/terraform.html",
+    "url": "/terraform.html",
     "relUrl": "/terraform.html"
-  },"12": {
+  },"20": {
     "doc": "Terraform Commands",
     "title": "Terraform Commands",
-    "content": " ",
-    "url": "http://localhost:4000/terraform_commands.html",
+    "content": "Terraform commands . ",
+    "url": "/terraform_commands.html",
     "relUrl": "/terraform_commands.html"
   }
 }

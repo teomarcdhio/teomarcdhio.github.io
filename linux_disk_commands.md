@@ -2,7 +2,7 @@
 layout: default
 title: Disk Commands
 parent: Linux
-nav_order: 1
+nav_order: 2
 ---
 ### Disk commnads
 
