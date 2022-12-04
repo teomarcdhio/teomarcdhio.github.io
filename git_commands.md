@@ -15,3 +15,6 @@ Delete a local branch
 ```git branch -D yourBranchName```   
 Cherry pick commit 63162ea    
 ```git cherry-pick 63162ea```  
+Tag a branch and publish it   
+```git tag <tagname>```  
+```git push origin --tags```     

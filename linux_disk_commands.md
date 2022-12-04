@@ -15,4 +15,10 @@ Wipe your master boot record (MBR)
 Filling the disk with all zeros (This may take a while, as it is making every bit of data 0)  
 ```dd if=/dev/zero of=/dev/sdX bs=1M```replace X with the target drive letter.  
 Filling the disk with random data rather than zeros   
-```dd if=/dev/urandom of=/dev/sdX bs=1M``` replace X with the target drive letter  
+```dd if=/dev/urandom of=/dev/sdX bs=1M``` replace X with the target drive letter   
+Display a list containing file system information  
+```lsblk -f```   
+Format a disk partition with the ext4 file system  
+```sudo mkfs -t ext4 /dev/sdb1```   
+Mount the partition to the data directory  
+```sudo mount -t auto /dev/sdb1 /mnt/data```   

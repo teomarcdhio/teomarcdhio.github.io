@@ -103,22 +103,34 @@
   },"17": {
     "doc": "Disk Commands",
     "title": "Disk Commands",
-    "content": "Disk commnads . Filling the second partition on the /dev/sda disk with all zeros dd if=/dev/zero of=/dev/sdX2 bs=1M replace X with the target drive letter. Filling the third partition with random data dd if=/dev/urandom of=/dev/sdX3 bs=1M #replace X with the target drive letter. Wipe your master boot record (MBR) dd if=/dev/zero of=/dev/hdX bs=446 count=1 #replace X with the target drive letter. Filling the disk with all zeros (This may take a while, as it is making every bit of data 0) dd if=/dev/zero of=/dev/sdX bs=1Mreplace X with the target drive letter. Filling the disk with random data rather than zeros dd if=/dev/urandom of=/dev/sdX bs=1M replace X with the target drive letter . ",
+    "content": "Disk commnads . Filling the second partition on the /dev/sda disk with all zeros dd if=/dev/zero of=/dev/sdX2 bs=1M replace X with the target drive letter. Filling the third partition with random data dd if=/dev/urandom of=/dev/sdX3 bs=1M #replace X with the target drive letter. Wipe your master boot record (MBR) dd if=/dev/zero of=/dev/hdX bs=446 count=1 #replace X with the target drive letter. Filling the disk with all zeros (This may take a while, as it is making every bit of data 0) dd if=/dev/zero of=/dev/sdX bs=1Mreplace X with the target drive letter. Filling the disk with random data rather than zeros dd if=/dev/urandom of=/dev/sdX bs=1M replace X with the target drive letter Display a list containing file system information lsblk -f Format a disk partition with the ext4 file system sudo mkfs -t ext4 /dev/sdb1 Mount the partition to the data directory sudo mount -t auto /dev/sdb1 /mnt/data . ",
     "url": "/linux_disk_commands.html",
     "relUrl": "/linux_disk_commands.html"
   },"18": {
+    "doc": "Mdadm raid",
+    "title": "Mdadm raid",
+    "content": "Linux Software raid setup with Mdadm . To setup a software raid wit mdadm you first need to make sure your drives are prepared and ready to be used. Run fdisk /dev/sdb to setup your drive with the fdisk utility. Select n to create a new partition and proceed with the default values ( partition should be 1 and first and last sectors should be as per fdisk suggestion ). Use t to select the partition and define the partition type; select fd to set a Linux Raid Autoconnect type. Do the same for as many drives you need to add to the array. Install mdadm with sudo apt-get install mdadm If the drive was previously used in an mdadm array, clean the super block with mdadm --zero-superblock /dev/sdb To create the raid array use mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc where –level=1 represent the type of array you want to use ( 0 is stripe, 1 is mirror, etc ). Check the status of the array with cat /proc/mdstat Format the newly created array with sudo mkfs.ext3 /dev/md0 Now, to mount your new device, create a directory mkdir /raid1 and mount it with mount /dev/md0 /raid1 To validate that the raid is now mounted run df -H; you shoudl now see your new /radi1 folder To make sure the raid is mounted automatically on boot use nano /etc/fstab add the following line /dev/md0 /raid1 ext3 noatime,rw 0 0 To check the array status cat /proc/mdstat To get info on the array mdadm --query /dev/md0 or mdadm -D /dev/md0 If the array is degraded or only 1 drive available, you can remove a drive using sudo mdadm --remove /dev/md0 /dev/sdb and add a new one by sudo mdadm --add /dev/md0 /dev/sdb To stop the array use mdadm --stop /dev/md0 To delete an array use mdadm --remove /dev/md0 . ",
+    "url": "/linux_mdadm.html",
+    "relUrl": "/linux_mdadm.html"
+  },"19": {
     "doc": "Regex Commands",
     "title": "Regex Commands",
     "content": "Regex links . Regex generator link Log regex generator link . Regex commnads . Apache logs parsing 127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326 \"http://www.example.com/start.html\" \"Mozilla/4.08 [en] (Win98; I ;Nav)\" using the following regex /^(?&lt;host&gt;[^ ]*) [^ ]* (?&lt;user&gt;[^ ]*) \\[(?&lt;time&gt;[^\\]]*)\\] \"(?&lt;method&gt;\\S+)(?: +(?&lt;path&gt;[^ ]*) +\\S*)?\" (?&lt;code&gt;[^ ]*) (?&lt;size&gt;[^ ]*)(?: \"(?&lt;referer&gt;[^\\\"]*)\" \"(?&lt;agent&gt;.*)\")?$/ The output looks like . { \"parsed\": { \"host\": \"127.0.0.1\", \"user\": \"frank\", \"method\": \"GET\", \"path\": \"/apache_pb.gif\", \"code\": \"200\", \"size\": \"2326\", \"referer\": \"http://www.example.com/start.html\", \"agent\": \"Mozilla/4.08 [en] (Win98; I ;Nav)\" } } . ",
     "url": "/linux_regex_commands.html",
     "relUrl": "/linux_regex_commands.html"
-  },"19": {
+  },"20": {
+    "doc": "UFW Commands",
+    "title": "UFW Commands",
+    "content": "UFW commnads . Enable the firewall ufw enable Disable the firewall ufw disable Set the default incoming policy to deny all access ufw default deny incoming Set the default policy to allow all outgoing connections ufw default allow outgoing See the current status of the firewall and see the list of rules ufw status Allow port 22 ufw allow 22 Block IP address 192.168.0.10 ufw deny from 192.168.0.10 Allow access to port 22 from 192.168.0.10 ufw allow from 192.168.0.10 to any port 22 Allow access to port 22 from 192.168.0.0 subnet ufw allow from 192.168.0.0/24 to any port 22 Allow all incoming TCP request on port 80 and 443 ufw allow proto tcp from any to any port 80,443 Block outgoing packets on port 22 ufw deny out 22 Get the status and numbered list of rules ufw status numbered Delete ruel number 3 from the list ufw delete 3 . ",
+    "url": "/linux_ufw_commands.html",
+    "relUrl": "/linux_ufw_commands.html"
+  },"21": {
     "doc": "Terraform",
     "title": "Terraform",
     "content": "Terraform . Links . ",
     "url": "/terraform.html",
     "relUrl": "/terraform.html"
-  },"20": {
+  },"22": {
     "doc": "Terraform Commands",
     "title": "Terraform Commands",
     "content": "Terraform commands . ",
