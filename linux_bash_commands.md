@@ -24,4 +24,7 @@ Exctract tar file to current directory
 ```tar -xzvf file.tar.gz```   
 Exctract tar file to a specific directory      
 ```tar -xzvf file.tar.gz -C /tmp/```   
+List all environment variables   
+```printenv```   
+
 
