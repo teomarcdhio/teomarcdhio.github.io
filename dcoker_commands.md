@@ -49,3 +49,13 @@ List volumes.
 ```docker volume ls```   
 Remove volume.   
 ```docker volume rm volume_name```   
+Display container detaisl includign laayers, env varibales, etc.   
+```docker inspect continaerId```   
+Show container variables   
+```docker inspect -f "{{ .Config.Env }}" containerId```   
+Apply changes to container image   
+```docker commit --change "ENV DEBUG=true" containerId  yourcontainerimagename:tageversion```   
+Login to private registry   
+```docker login --username YOURUSERNAME --password-stdin YOURPASSWORD```
+Copy files from container to host   
+```docker cp <containerId>:/file/path/within/container /host/path/target```   

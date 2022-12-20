@@ -11,3 +11,6 @@ Produce a sample of the chart before creatign the bundle ( from within the chart
 
 List available helm deployments inside a namesapce  
 ```helm list -n namesapce```
+
+Package helm chart ( from within the chart folder )   
+```helm package NAMEOFTHECHART```   

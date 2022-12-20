@@ -7,6 +7,7 @@ nav_order: 1
 ### Git commands
 
 Squash the last two commits  
+```git logs```   
 ```git rebase -i HEAD~2```  
 ```git push -f```  
 Rebase from main  
@@ -18,3 +19,5 @@ Cherry pick commit 63162ea
 Tag a branch and publish it   
 ```git tag <tagname>```  
 ```git push origin --tags```     
+Show last commits    
+```git logs```    
