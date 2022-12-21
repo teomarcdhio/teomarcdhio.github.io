@@ -27,4 +27,3 @@ Exctract tar file to a specific directory
 List all environment variables   
 ```printenv```   
 
-
