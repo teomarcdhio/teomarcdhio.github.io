@@ -26,4 +26,7 @@ Exctract tar file to a specific directory
 ```tar -xzvf file.tar.gz -C /tmp/```   
 List all environment variables   
 ```printenv```   
+Copy from remote to local host   
+```scp <Username>@<IPorHost>:<PathToFile>   <LocalFileLocation>```   
+
 
