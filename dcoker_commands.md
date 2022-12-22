@@ -59,3 +59,7 @@ Login to private registry
 ```docker login --username YOURUSERNAME --password-stdin YOURPASSWORD```
 Copy files from container to host   
 ```docker cp <containerId>:/file/path/within/container /host/path/target```   
+Check memory usage   
+```cat /sys/fs/cgroup/memory/memory.usage_in_bytes```
+Check cpu usage ( CPU time in nanoseconds )     
+```cat /sys/fs/cgroup/cpu/cpuacct.usage```     
