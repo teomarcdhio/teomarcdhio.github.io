@@ -25,4 +25,10 @@ Show branch details
 ```git show-branch``` 
 Rename a branch   
 ```git branch -m oldbranchname newbranchname```   
+Delete remote branch   
+```git push origin --delete oldbranchname```    
+Push renamed branch   
+```git push origin -u newbranchname```   
+
+
 
