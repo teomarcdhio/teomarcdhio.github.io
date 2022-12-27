@@ -21,3 +21,5 @@ Tag a branch and publish it
 ```git push origin --tags```     
 Show last commits    
 ```git logs```    
+Show branch details   
+```git show-branch```    
