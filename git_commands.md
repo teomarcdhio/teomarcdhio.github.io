@@ -22,4 +22,7 @@ Tag a branch and publish it
 Show last commits    
 ```git logs```    
 Show branch details   
-```git show-branch```    
+```git show-branch``` 
+Rename a branch   
+```git branch -m oldbranchname newbranchname```   
+
