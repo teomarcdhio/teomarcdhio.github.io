@@ -17,3 +17,8 @@ Retrieve ingress cert and save to file
 
 Port forward a container to your local host   
 ```kubectl port-forward pod/podname -n namesapce 8080:8080 ```
+
+Terminate finalizer on stuck ingress controllers ( can't delete ingress )   
+```kubectl patch ingress <name-of-the-ingress> -n <your-namespace> -p '{"metadata":{"finalizers":[]}}' --type=merge```   
+Show all resources still attached to a naamespace   
+```kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>```   
