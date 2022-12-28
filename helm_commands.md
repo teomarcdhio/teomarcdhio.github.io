@@ -15,4 +15,7 @@ Package helm chart ( from within the chart folder )
 Install specific version of a chart    
 ```helm install my-mongodb bitnami/mongodb --version 8.3.1```   
 Find a chart   
-```helm search repo mongo -l```    
+```helm search repo mongo -l```  
+Check status of a chart   
+```helm status <nameofthechart>```   
+  

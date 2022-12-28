@@ -13,3 +13,15 @@ Install Istio to cluster ( from within the Istio folder )
 ```istioctl install -y```   
 Uninstall Istio from cluster   
 ```istioctl x uninstall --purge```   
+Enable extra logs via telemtry    
+```apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: mesh-default
+  namespace: istio-system
+spec:
+  accessLogging:
+    - providers:
+      - name: envoy```   
+
+      
