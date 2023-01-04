@@ -22,13 +22,16 @@ Tag a branch and publish it
 Show last commits    
 ```git logs```    
 Show branch details   
-```git show-branch``` 
+```git show-branch```   
 Rename a branch   
 ```git branch -m oldbranchname newbranchname```   
 Delete remote branch   
 ```git push origin --delete oldbranchname```    
 Push renamed branch   
 ```git push origin -u newbranchname```   
+Rename / change a commit   
+```git commit --amend```   
+```git push --force-with-lease origin yourBranchName```    
 
 
 
