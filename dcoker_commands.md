@@ -16,6 +16,8 @@ To give the container a unique name use --name ; this will create an Nginx conta
 ```docker run -d --name myWebServer nginx```   
 To create a new container and interact with it via shell.    
 ```docker run -it name-of-the-container bash```   
+To create a new container that will delete once stopped.    
+```docker run --rm -it name-of-the-container bash```  
 List running containers and details such as their network port associations and unique container ID.    
 ```docker ps```   
 Most of the following commands can be run against the name of the container or their unique ID; examples are with the unique ID.

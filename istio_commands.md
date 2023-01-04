@@ -14,7 +14,8 @@ Install Istio to cluster ( from within the Istio folder )
 Uninstall Istio from cluster   
 ```istioctl x uninstall --purge```   
 Enable extra logs via telemtry    
-```apiVersion: telemetry.istio.io/v1alpha1
+```
+apiVersion: telemetry.istio.io/v1alpha1
 kind: Telemetry
 metadata:
   name: mesh-default
@@ -22,6 +23,7 @@ metadata:
 spec:
   accessLogging:
     - providers:
-      - name: envoy```   
+      - name: envoy
+```   
 
       
