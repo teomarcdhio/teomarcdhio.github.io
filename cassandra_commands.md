@@ -11,5 +11,12 @@ Connect to a cassandra instance
 ```cqlsh <IPADDRESS>  9042 -u <USERNAME> -p <PASSWORD>```    
 Show all keyspaces      
 ```DESC keyspaces;```    
-Shqo keyspaces with select statement      
-```SELECT * FROM system_schema.keyspaces;``` 
+Show keyspaces with select statement      
+```SELECT * FROM system_schema.keyspaces;```      
+Use a keyspace   
+```use janusgraph;```   
+Show edges fro the janusgraph keyspace   
+```select * from edgestore;```   
+
+
+

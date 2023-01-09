@@ -28,5 +28,3 @@ To build the container use docker build -t yourdockerhubusername/nameof the cont
 The above line trigger docker to buil a container based on the dockerfile inside the dockerBuildFolder and assign a tag ( -t ) with your dockerhub username followed by the name of the actual docker container.
 
 You can now see the container in the available images ( docker images ).
-
-READ NEXT
