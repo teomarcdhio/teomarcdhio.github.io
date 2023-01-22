@@ -6,6 +6,14 @@ nav_order: 1
 ---
 ### Bash scripts
 
+Sample bash script   
+```
+#!/bin/bash 
+for i in `seq 1 90` do      
+   echo $i 
+done
+```
+
 Pass a file as an argument of a command; in the case below we are reading the content of the file with CAT and passing it to CAT ( afte rth epipe ) to output      
 ```
 cat <<EOF | cat -
@@ -23,3 +31,28 @@ metadata:
     name: development
 EOF
 ```   
+
+Read file line per line ( Execution: ./read_file_line_per_line.sh file_to_read.txt )   
+```
+#!/bin/bash
+while IFS='' read -r line || [[ -n "$line" ]]; do
+     echo "Text read from file: $line"
+done < "$1"
+```   
+Check if a file exists    
+```
+#!/bin/bash
+if [ -f $path/to/file.txt ];  then 
+     echo "exist"
+else 
+     echo "no exist"
+fi
+```    
+
+
+
+
+
+
+
+
