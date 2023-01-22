@@ -22,3 +22,7 @@ Format a disk partition with the ext4 file system
 ```sudo mkfs -t ext4 /dev/sdb1```   
 Mount the partition to the data directory  
 ```sudo mount -t auto /dev/sdb1 /mnt/data```   
+Copy file to partition ( bootable usb )      
+```sudo dd bs=4M if=Downloads/distro-image.iso of=/dev/sdb conv=fdatasync status=progress```    
+Format a drive ( make sure to umount before )       
+```sudo mkfs.ext4 /dev/sdb1```  
