@@ -4,7 +4,7 @@ title: Docker Commands
 parent: Docker
 nav_order: 1
 ---
-To create a new container; if the image is not available locally, Docker will look for a match in the DockerHub registry.  
+To create a new container; if the image is not available locally, Docker will look for a match in the DockerHub registry.   
 `docker run name-of-the-container`   
 To list local images.  
 `docker images`   

@@ -7,7 +7,8 @@ nav_order: 3
 ### Create a linux service with systemd
 
 Create the service definition as below  ( example is based on hashicorp vault )   
-```[Unit]
+```
+[Unit]
 Description=Vault dev mode service
 After=network.target
 StartLimitIntervalSec=60
@@ -19,12 +20,13 @@ User=ubuntu
 ExecStart=/usr/bin/vault server -dev
 
 [Install]
-WantedBy=multi-user.target```   
+WantedBy=multi-user.target
+```   
 Set your actual username after ```User=``` and set the proper path to your script in ```ExecStart=```   
 
 Save as ```/etc/systemd/system/vault.service```   
 
-Start the service 
+Start the service   
 ```systemctl start vault```   
 Enable auto start on boot   
 ```systemctl enable vault```   
