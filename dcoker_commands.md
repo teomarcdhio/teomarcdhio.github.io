@@ -65,3 +65,5 @@ Check memory usage
 ```cat /sys/fs/cgroup/memory/memory.usage_in_bytes```
 Check cpu usage ( CPU time in nanoseconds )     
 ```cat /sys/fs/cgroup/cpu/cpuacct.usage```     
+Keep a container runnign wiht entrypoint   
+```ENTRYPOINT [ "tail", "-f", "/dev/null" ]```   

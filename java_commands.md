@@ -5,6 +5,10 @@ parent: Java
 nav_order: 1
 ---
 ### Java
+Install Java on debain based distro   
+```sudo apt-get install openjdk-8-jre```   
+Check version   
+```java --version```   
 Check Java paramaters ( here piped to grep specific values )      
 ```java -XX:+PrintFlagsFinal -version | grep grep -i maxheap'```   
 Check how much heap memory is allocated if using the -XX:MaxRAMPercentage sett o 50%     

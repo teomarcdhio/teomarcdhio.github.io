@@ -18,4 +18,7 @@ Find a chart
 ```helm search repo mongo -l```  
 Check status of a chart   
 ```helm status <nameofthechart>```   
+Debug mode to troubleshoot failed deployments   
+```helm install my-mongodb bitnami/mongodb --version 8.3.1 --debug```   
+
   
