@@ -48,8 +48,11 @@ else
      echo "no exist"
 fi
 ```    
-
-
+Check ip reachability
+```
+#!/bin/bash 
+ping -w1 -c3$IP >/dev/null 2>&1 && echo "ON" || echo "OFF"
+```
 
 
 

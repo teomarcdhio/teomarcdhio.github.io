@@ -41,6 +41,8 @@ Find files and edit their permission
 #### Users and groups    
 Add user to a group ( dave to vboxusers group )     
 ```sudo usermod -a -G vboxusers dave```    
+Execute a command as another user    
+```sudo -uuser command```    
 #### Cron jobs    
 Edit cron jobs    
 ```crontab -e```  
@@ -77,6 +79,12 @@ Print the third word from file separated by -
 ```cat file.txt| awk -F"-" '{print $3}'```    
 View only the lines that contain string1    
 ```sed -n '/string1/p' files.txt```    
+Create symbolic link    
+```ln -s/file_or_directory_path /direct_access_path```
+Pretty print json files in CLI    
+```cat file.json | jq```    
+Print only values of the key my_key from json file    
+```jq '.[] | .my_key' file.json```
  
 
 

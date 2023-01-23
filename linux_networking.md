@@ -16,4 +16,9 @@ List open files based on port range
 ```sudo lsof -i :1-1024```   
 Find network activity by user   
 ```sudo lsof -a -i -u www-data```   
+Traffic capture with tcpdump   
+```tcpdump -iinterface_namedst port portport_number-w capture.pcap```    
+Listen for TCP connections on port 5050    
+```netcat -l 5050```    
+
 
