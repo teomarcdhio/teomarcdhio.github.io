@@ -20,6 +20,8 @@ Check status of a chart
 ```helm status <nameofthechart>```      
 Debug mode to troubleshoot failed deployments       
 ```helm install my-mongodb bitnami/mongodb --version 8.3.1 --debug```   
+To list all helm deploymnets including failed or pending status    
+```helm ls -a -n yournamespace```    
 
 
   
