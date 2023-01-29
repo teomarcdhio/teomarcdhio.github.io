@@ -85,6 +85,10 @@ Pretty print json files in CLI
 ```cat file.json | jq```    
 Print only values of the key my_key from json file    
 ```jq '.[] | .my_key' file.json```
+Stress test cpu ( run multiple times if needed and ` killall yes` to terminate all processes ).   
+```yes > /dev/null &```.  
+Stress test cpu with Stress ( sudo apt-get install stress ).  
+```sudo stress --cpu  2 --timeout 20```.  
  
 
 
