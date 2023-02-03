@@ -20,5 +20,7 @@ Traffic capture with tcpdump
 ```tcpdump -iinterface_namedst port portport_number-w capture.pcap```    
 Listen for TCP connections on port 5050    
 ```netcat -l 5050```    
+List listening ports on host.  
+```netstat -Vnl```.  
 
 

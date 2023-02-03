@@ -11,13 +11,15 @@ Produce a sample of the chart before creatign the bundle ( from within the chart
 List available helm deployments inside a namesapce   
 ```helm list -n namesapce```   
 Package helm chart ( from within the chart folder )       
-```helm package NAMEOFTHECHART```   
+```helm package <nameofthechart>```   
 Install specific version of a chart    
-```helm install my-mongodb bitnami/mongodb --version 8.3.1```      
+```helm install <nameofthechart> bitnami/mongodb --version 8.3.1```      
 Find a chart    
 ```helm search repo mongo -l```      
 Check status of a chart   
-```helm status <nameofthechart>```      
+```helm status <nameofthechart>```   
+View logs of chart release.   
+```helm history <nameofthechart>```.     
 Debug mode to troubleshoot failed deployments       
 ```helm install my-mongodb bitnami/mongodb --version 8.3.1 --debug```   
 To list all helm deploymnets including failed or pending status    

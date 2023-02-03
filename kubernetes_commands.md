@@ -41,3 +41,5 @@ metadata:
     name: development
 EOF
 ```   
+List details about kubernetes node ( including instance type, region, zone, etc ).   
+```kubectl get nodes -o json|jq -C '.items[] | .metadata.name,.metadata.labels'```.  

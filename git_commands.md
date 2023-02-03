@@ -32,6 +32,12 @@ Push renamed branch
 Rename / change a commit   
 ```git commit --amend```   
 ```git push --force-with-lease origin yourBranchName```    
+Clone repository using token ( token need Full control of private repositories ).   
+```export GITHUB_USER=matteo-marcolini```.  
+```export GITHUB_TOKEN=<yourclassictoken>```.  
+```export GITHUB_REPOSITORY=teomarcdhio/radio```.  
+```git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}```.  
+
 
 
 
