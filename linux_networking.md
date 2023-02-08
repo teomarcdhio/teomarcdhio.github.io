@@ -22,5 +22,21 @@ Listen for TCP connections on port 5050
 ```netcat -l 5050```    
 List listening ports on host.  
 ```netstat -Vnl```.  
+List active network connections.  
+```netstat -a```.   
+
+
+
+
+### NetRC
+
+Create a file `~/.netrc` with the below content ( example for artifactory )  
+```
+machine artifactory.server.com
+login <your-username>
+password <your-password>
+```
+You can now use those credentials against a curl command ( or any other cli command ) by appending the -n to it.  
+`curl --location --request GET 'https://artifactory.server.com/artifactory/api/v2/repositories/' -n`.  
 
 

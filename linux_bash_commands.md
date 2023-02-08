@@ -89,6 +89,9 @@ Stress test cpu ( run multiple times if needed and ` killall yes` to terminate a
 ```yes > /dev/null &```.  
 Stress test cpu with Stress ( sudo apt-get install stress ).  
 ```sudo stress --cpu  2 --timeout 20```.  
+Build multipe directories with one command.  
+```mkdir -p /var/directory1/directory2```.  
+
  
 
 
