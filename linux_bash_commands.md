@@ -38,6 +38,8 @@ Find files containing the specified string; this will return content fo teh file
 ```find . -type f -exec grep "wordyouaresearching" '{}' \; -print```   
 Find files and edit their permission    
 ```find . -name "rc.conf" -exec chmod o+r '{}' \;```    
+Add the current path to the global PATH       
+```export PATH=$PWD/bin:$PATH```    
 #### Users and groups    
 Add user to a group ( dave to vboxusers group )     
 ```sudo usermod -a -G vboxusers dave```    

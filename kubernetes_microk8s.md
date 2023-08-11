@@ -18,5 +18,5 @@ Get kube config details to access Microk8s cluster remotely
 ```microk8s config```   
 Ebnable Metallb adn local storage    
 ```microk8s enable metallb hostpath-storage```   
-Add node to cluster ( from the master node )   
+Add node to cluster ( from the master node );make sure to set the hosts file with the relevant ip addresses for both master and workers      
 ```microk8s add-node```   

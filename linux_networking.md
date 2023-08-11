@@ -4,6 +4,17 @@ title: Networking Commands
 parent: Linux
 nav_order: 6
 ---
+### Networking 
+
+Test endpoints    
+```https://pipedream.com/sources```   
+Local endpoint on container    
+```https://httpbin.org/```    
+TcpDump cheatsheet    
+```https://andreafortuna.org/2018/07/18/tcpdump-a-simple-cheatsheet/```    
+
+
+
 ### Networking commands
 
 Display files ( services ) for all listening ports    
@@ -24,8 +35,24 @@ List listening ports on host.
 ```netstat -Vnl```.  
 List active network connections.  
 ```netstat -a```.   
+Disdplay ceetificate for an endpoint   
+```openssl s_client -showcerts -connect bbc.co.uk:443```    
 
 
+### TCPDUMP    
+
+Identify available network devices   
+```tcpdump -D```   
+Grab traffic from localhost and write to file ( httpbin.pcap)        
+```tcpdump -i lo -w httpbin.pcap```
+Grab traffic from localhost on port 80 and write to file ( httpbin.pcap)        
+```tcpdump -i lo port 80 -w httpbin.pcap```  
+Grab traffic from wireless card on port 80 and write to file ( httpbin.pcap)        
+```tcpdump -i wlp0s20f3 port 80 -w httpbin.pcap```  
+Read the tcpdump results from file    
+```tcpdump -r httpbin.pcap```    
+Read the tcpdump results including the body response from file    
+```tcpdump -r httpbin.pcap -A```    
 
 
 ### NetRC
