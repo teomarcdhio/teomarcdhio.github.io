@@ -24,6 +24,16 @@ Debug mode to troubleshoot failed deployments
 ```helm install my-mongodb bitnami/mongodb --version 8.3.1 --debug```   
 To list all helm deploymnets including failed or pending status    
 ```helm ls -a -n yournamespace```    
-
-
-  
+Show falues of a chart   
+```helm show values grafana/mimir-distributed```    
+Set variable against parent proprety to avoid nil reference (https://stackoverflow.com/questions/65790905/nil-pointer-evaluating-interface-when-installing-a-helm-chart )    
+```
+ {{- $flowable := .Values.flowable }}
+            {{- if $flowable.enabled }}
+            - name: "postgres.password"
+              valueFrom:
+                secretKeyRef:
+                  name: flowable-secret
+                  key: password
+            {{- else }}
+```  

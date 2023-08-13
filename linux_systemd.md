@@ -30,5 +30,8 @@ Start the service
 ```systemctl start vault```   
 Enable auto start on boot   
 ```systemctl enable vault```   
+Show details of a systemctl service   
+```systemctl cat td-agent.service```    
+
 
 Helpful link [link](https://medium.com/hashicorp-engineering/systemd-service-file-for-vault-3e339ff86bc6)

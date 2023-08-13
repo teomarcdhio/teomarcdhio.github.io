@@ -67,3 +67,6 @@ Check cpu usage ( CPU time in nanoseconds )
 ```cat /sys/fs/cgroup/cpu/cpuacct.usage```     
 Keep a container runnign wiht entrypoint   
 ```ENTRYPOINT [ "tail", "-f", "/dev/null" ]```   
+Remove all running and exited container processes    
+```docker rm $(docker ps -a -f status=exited -f status=created -q)```    
+

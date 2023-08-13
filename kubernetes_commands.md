@@ -6,10 +6,6 @@ nav_order: 1
 ---
 ### Kubernetes commands
 
-Produce a sample of the chart before creatign the bundle ( from within the chart folder )
-```helm template . -f values.yaml > sample.yaml```
-List available helm deployments inside a namesapce  
-```helm list -n namesapce```
 Retrieve ingress cert and save to file   
 ```kubectl get secret/application-tls-ingress-cert -n istio-system  -o json | jq -r '.data."tls.crt"' | base64 -d > ingress.crt```   
 Port forward a container to your local host     
@@ -58,3 +54,31 @@ lifecycle:
 ```    
 Get secret from kubernetes    
 ```kubectl get secrets/postgres-pguser-postgres -ogo-template='{{ index .data "password" | base64decode }}' -n <namespace>```    
+Create a cronjob ( https://devopscube.com/create-kubernetes-jobs-cron-jobs/ )
+```
+apiVersion: batch/v1 
+kind: Job 
+metadata:   
+  name: kubernetes-job-example   
+  labels:     
+    jobgroup: jobexample 
+spec:   
+  template:     
+    metadata:       
+      name: kubejob       
+      labels:         
+        jobgroup: jobexample     
+    spec:       
+      containers:       
+      - name: c         
+        image: devopscube/kubernetes-job-demo:latest         
+        args: ["100"]       
+      restartPolicy: OnFailure
+```
+Run a cronjob manually    
+```kubectl create job --from=cronjob/your-cronjob-name manual-run-job-name```   
+```kubectl create job --from=cronjob/kubernetes-cron-job manual-cron-job```   
+Get cluster events    
+```kubectl get events -w```    
+Retrieve object by create date   
+```kubectl get pods --sort-by=.metadata.creationTimestamp```   
