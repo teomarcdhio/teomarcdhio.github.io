@@ -17,3 +17,6 @@ Obtain cert from url
 
 Save website cert to file   
 ```echo -n | openssl s_client -connect $HOST:$PORTNUMBER -servername $SERVERNAME | openssl x509 > /tmp/$SERVERNAME.cert```   
+
+Gives the full description of the certificate   
+```openssl x509 -in certificate.crt -text -noout```    

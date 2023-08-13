@@ -38,8 +38,14 @@ Find files containing the specified string; this will return content fo teh file
 ```find . -type f -exec grep "wordyouaresearching" '{}' \; -print```   
 Find files and edit their permission    
 ```find . -name "rc.conf" -exec chmod o+r '{}' \;```    
+Find all files matching a type ( say json ) and output the content    
+```find -iname "*.json" -type f -exec cat "{}" \;```    
+Find all mp3 files and execute the shell script against each one of them    
+```find -iname "*.mp3" -type f -exec sh cut.sh "{}" \;```     
 Add the current path to the global PATH       
 ```export PATH=$PWD/bin:$PATH```    
+Find location of executable    
+```which -a python```   
 #### Users and groups    
 Add user to a group ( dave to vboxusers group )     
 ```sudo usermod -a -G vboxusers dave```    
@@ -93,6 +99,12 @@ Stress test cpu with Stress ( sudo apt-get install stress ).
 ```sudo stress --cpu  2 --timeout 20```.  
 Build multipe directories with one command.  
 ```mkdir -p /var/directory1/directory2```.  
+Find some text inside a directory ( scanning all files ).   
+```grep -rnw '/path' -e 'text' ```   
+Display the difference bewteen two files    
+```diff -c file1.txt file2.txt```   
+Display the difference bwteen two files ( git mode )    
+```diff -u file1.txt file2.txt```     
 
  
 

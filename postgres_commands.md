@@ -14,6 +14,8 @@ Quit psql
 ```\q```    
 Show tables in postgres    
 ```\dt```    
+Show schema   
+```\dn```   
 Create table in postgres    
 ```
 CREATE TABLE accounts (
@@ -25,10 +27,22 @@ CREATE TABLE accounts (
 ```     
 Insert data    
 ```
-INSERT INTO accounts 
-(user_id, username, password, email)
-VALUES
-(2, 'John', 'somepassword', 'another@gmail.com');
+INSERT INTO accounts     
+(user_id, username, password, email)    
+VALUES    
+(2, 'John', 'somepassword', 'another@gmail.com');    
 ```    
 Show data in table    
 ```SELECT * FROM accounts```    
+Drop all content of database   
+```
+DROP SCHEMA public CASCADE;   
+CREATE SCHEMA public;    
+GRANT ALL ON SCHEMA public TO postgres;   
+GRANT ALL ON SCHEMA public TO public;    
+```    
+Dump db from rmeote server   
+```pg_dump -U keycloak -h localhost -p 5432 keycloak > keycloak.sql```    
+Restore db to remote server    
+```psql -U keycloak -h localhost keycloak < keycloak.sql```    
+

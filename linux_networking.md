@@ -36,7 +36,20 @@ List listening ports on host.
 List active network connections.  
 ```netstat -a```.   
 Disdplay ceetificate for an endpoint   
-```openssl s_client -showcerts -connect bbc.co.uk:443```    
+```openssl s_client -showcerts -connect bbc.co.uk:443```   
+Show what routes via specified card     
+```ip route show | grep wg0```      
+See open ports and associated services    
+```sudo lsof -i -P -n```     
+Find IP of given url     
+```host -t a bbc.co.uk```   
+Find MX record of given url   
+```host -t mx bbc.co.uk```    
+Find NS records of given url    
+```host -t ns bbc.co.uk```    
+Find all records of given url     
+```host -a bbc.co.uk```   
+
 
 
 ### TCPDUMP    
