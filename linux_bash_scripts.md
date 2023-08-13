@@ -58,7 +58,8 @@ Return true if a bash variable is unset or set to the empty string
 Return true if variable is set and has value    
 ```[ ! -z "$var" ]```   
 Bash if statement    
-```#!/bin/bash
+```
+#!/bin/bash
 # elif statements
 if [ $1 -ge 18 ]
 then
@@ -96,7 +97,14 @@ echo "Original value: $num"
 num=$((num-7))
 echo "Value after subtracting 7:" $num
 ```    
-
+Get first part of the string by delimiter ( : )    
+```string=$(echo "$i" | cut -d ':' -f1)```    
+Get second part of the string by delimiter ( : )   
+```string=$(echo "$i" | cut -d ':' -f2)```   
+Get first and second part of string by delimiter ( . )    
+```string=$(echo "$i" | cut -d '.' -f1-2)```    
+Remove empty spaces from string    
+```echo "$i" |  sed 's/ //g'```
 
 
 

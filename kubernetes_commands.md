@@ -56,4 +56,5 @@ lifecycle:
             exec:
               command: ["/bin/sh", "-c", "echo '<?php phpinfo(); ?>' > index.php"]
 ```    
-
+Get secret from kubernetes    
+```kubectl get secrets/postgres-pguser-postgres -ogo-template='{{ index .data "password" | base64decode }}' -n <namespace>```    
