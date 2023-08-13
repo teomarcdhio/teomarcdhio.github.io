@@ -92,14 +92,14 @@ Create symbolic link
 Pretty print json files in CLI    
 ```cat file.json | jq```    
 Print only values of the key my_key from json file    
-```jq '.[] | .my_key' file.json```
-Stress test cpu ( run multiple times if needed and ` killall yes` to terminate all processes ).   
-```yes > /dev/null &```.  
-Stress test cpu with Stress ( sudo apt-get install stress ).  
-```sudo stress --cpu  2 --timeout 20```.  
-Build multipe directories with one command.  
-```mkdir -p /var/directory1/directory2```.  
-Find some text inside a directory ( scanning all files ).   
+```jq '.[] | .my_key' file.json```   
+Stress test cpu ( run multiple times if needed and ` killall yes` to terminate all processes )     
+```yes > /dev/null &```   
+Stress test cpu with Stress ( sudo apt-get install stress )   
+```sudo stress --cpu  2 --timeout 20```    
+Build multipe directories with one command     
+```mkdir -p /var/directory1/directory2```    
+Find some text inside a directory ( scanning all files )    
 ```grep -rnw '/path' -e 'text' ```   
 Display the difference bewteen two files    
 ```diff -c file1.txt file2.txt```   
