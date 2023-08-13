@@ -43,3 +43,17 @@ EOF
 ```   
 List details about kubernetes node ( including instance type, region, zone, etc ).   
 ```kubectl get nodes -o json|jq -C '.items[] | .metadata.name,.metadata.labels'```.  
+Get zones for all nodes in a eks cluster        
+```kubectl get nodes -o json | jq '.items[].metadata.labels."topology.ebs.csi.aws.com/zone"' ```    
+Redeploy all pods across cluster     
+```kubectl rollout restart```    
+Geenrate tls cert from kubeclt    
+```kubectl create secret tls tls-secret --cert=path/to/tls.cert --key=path/to/tls.key```    
+Kubernetes run script post container startup     
+```
+lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "echo '<?php phpinfo(); ?>' > index.php"]
+```    
+
