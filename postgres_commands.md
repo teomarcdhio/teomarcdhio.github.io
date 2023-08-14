@@ -28,6 +28,8 @@ Create db using createdb ( bundled with psql )
 ```createdb -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME>```   
 Create db using sql commands   
 ```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME> -c 'create database <yournewdb>;'```  
+Delete db using sql commands   
+```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME> -c 'drop database <yournewdb>;'``` 
 Grant privileges to new db    
 ```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME> -c 'grant all privileges on database <yournewdb> to <youruser>;'```      
 Create table in postgres    
