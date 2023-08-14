@@ -9,13 +9,27 @@ nav_order: 1
 Connect to a postgres db   
 ```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME>```    
 Show all databases    
-```\d```    
+```
+\l
+```    
 Quit psql   
-```\q```    
+```
+\q
+```    
 Show tables in postgres    
-```\dt```    
+```
+\dt
+```    
 Show schema   
-```\dn```   
+```
+\dn
+```   
+Create db using createdb ( bundled with psql )    
+```createdb -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME>```   
+Create db using sql commands   
+```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME> -c 'create database <yournewdb>;'```  
+Grant privileges to new db    
+```psql -h <REMOTE HOST> -p <REMOTE PORT> -U <DB_USER> <DB_NAME> -c 'grant all privileges on database <yournewdb> to <youruser>;'```      
 Create table in postgres    
 ```
 CREATE TABLE accounts (
