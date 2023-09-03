@@ -6,14 +6,10 @@ nav_order: 6
 ---
 ### Networking 
 
-Test endpoints    
-```https://pipedream.com/sources```   
-Local endpoint on container    
-```https://httpbin.org/```    
-TcpDump cheatsheet    
-```https://andreafortuna.org/2018/07/18/tcpdump-a-simple-cheatsheet/```    
-
-
+Test endpoints [link](https://pipedream.com/sources)   
+Local endpoint on container [link](https://httpbin.org/)    
+TcpDump cheatsheet [link](https://andreafortuna.org/2018/07/18/tcpdump-a-simple-cheatsheet/)    
+Netplan docs [link](https://netplan.readthedocs.io/en/latest/examples/)     
 
 ### Networking commands
 
@@ -78,5 +74,29 @@ password <your-password>
 ```
 You can now use those credentials against a curl command ( or any other cli command ) by appending the -n to it.  
 `curl --location --request GET 'https://artifactory.server.com/artifactory/api/v2/repositories/' -n`.  
+
+
+### Ubuntu specific
+
+Set static network ip configuration    
+```sudo nano /etc/netplan/00-installer-confgi.yaml```    
+populate with the block below changin your values accordingly ( routes defines your gateway )      
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens18:
+      dhcp4: no
+      addresses: [192.168.0.23/24]
+      nameservers:
+         addresses: [8.8.8.8,192.168.0.23]
+      routes:
+       - to: default
+         via: 192.168.0.1
+  version: 2
+```   
+Once saved, you can run   
+```sudo netplan try```    
+If there are no issues, press enter to accept the new configuration.     
 
 

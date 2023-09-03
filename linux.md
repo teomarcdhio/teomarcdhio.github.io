@@ -9,4 +9,4 @@ has_toc: true
 
 #### Links   
 
-Cron useful link [link] ( https://crontab.guru/ ).  
+Cron useful link [link]( https://crontab.guru/ )    
