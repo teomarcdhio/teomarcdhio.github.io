@@ -47,6 +47,9 @@ Find all records of given url
 ```host -a bbc.co.uk```   
 Show all TCP connections and associated process   
 ```sudo netstat -p -at```    
+Displaying the Routing Table    
+``sudo netstat -r```    
+
 
 
 
