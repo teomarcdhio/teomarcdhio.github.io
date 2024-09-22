@@ -21,7 +21,9 @@ broadcast_rpc_address: 10.0.4.76
 Start the server   
 ```bin/cassandra```   
 Check status of cassandra server       
-```bin/nodetools status``` 
+```bash
+bin/nodetools status
+``` 
 
 #### Links   
   
