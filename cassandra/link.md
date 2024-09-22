@@ -2,7 +2,6 @@
 layout: default
 title: Cassandra in folder links
 parent: Cassandra in folder
-nav_order: 1
 ---
 
 Connect to a cassandra instance  
