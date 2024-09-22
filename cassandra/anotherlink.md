@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Cassandra in folder another page
 parent: Cassandra in folder
 ---
