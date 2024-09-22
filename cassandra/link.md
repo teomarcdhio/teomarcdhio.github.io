@@ -10,18 +10,18 @@ Connect to a cassandra instance
 cqlsh <IPADDRESS> 9042 -u <USERNAME> -p <PASSWORD>
 ```  
 Show all keyspaces  
-```cqlsh
+```sql
 DESC keyspaces;
 ```
 Show keyspaces with select statement  
-```cqlsh
+```sql
 SELECT * FROM system_schema.keyspaces;
 ```  
 Use a keyspace  
-```cqlsh
+```sql
 use janusgraph;
 ```  
 Show edges fro the janusgraph keyspace  
-```cqlsh
+```sql
 select * from edgestore;
 ```
