@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cassandra in folder links
-parent: Cassandra
+parent: Cassandra in folder
 nav_order: 1
 ---
 
